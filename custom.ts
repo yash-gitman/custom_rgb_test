@@ -1,11 +1,10 @@
 /**
-* Use this file to define custom functions and blocks.
-* Read more at https://makecode.microbit.org/blocks/custom
-*/
+ * Custom functions for RGB LED control.
+ * Read more at https://makecode.microbit.org/blocks/custom
+ */
 
-//% weight=100 color=#FF5733 icon=""
+//% weight=100 color=#b80672 icon=""
 namespace rgb {
-
     // Enum for LED states (on/off)
     enum LEDState {
         //% block="off"
@@ -19,6 +18,7 @@ namespace rgb {
      * @param state RED state (on or off), eg: LEDState.On
      */
     //% block="set RED to %state"
+    //% weight=100
     export function rgb_red(state: LEDState): void {
         pins.digitalWritePin(DigitalPin.P14, state);
     }
@@ -28,6 +28,7 @@ namespace rgb {
      * @param state GREEN state (on or off), eg: LEDState.On
      */
     //% block="set GREEN to %state"
+    //% weight=99
     export function rgb_green(state: LEDState): void {
         pins.digitalWritePin(DigitalPin.P15, state);
     }
@@ -37,6 +38,7 @@ namespace rgb {
      * @param state BLUE state (on or off), eg: LEDState.On
      */
     //% block="set BLUE to %state"
+    //% weight=98
     export function rgb_blue(state: LEDState): void {
         pins.digitalWritePin(DigitalPin.P16, state);
     }
@@ -46,6 +48,8 @@ namespace rgb {
      * @param p RED brightness (0 to 1023), eg: 512
      */
     //% block="set RED brightness to %p"
+    //% weight=97
+    //% p.min=0 p.max=1023
     export function rgb_red_brightness(p: number): void {
         pins.analogWritePin(AnalogPin.P14, p);
     }
@@ -55,6 +59,8 @@ namespace rgb {
      * @param p GREEN brightness (0 to 1023), eg: 512
      */
     //% block="set GREEN brightness to %p"
+    //% weight=96
+    //% p.min=0 p.max=1023
     export function rgb_green_brightness(p: number): void {
         pins.analogWritePin(AnalogPin.P15, p);
     }
@@ -64,6 +70,8 @@ namespace rgb {
      * @param p BLUE brightness (0 to 1023), eg: 512
      */
     //% block="set BLUE brightness to %p"
+    //% weight=95
+    //% p.min=0 p.max=1023
     export function rgb_blue_brightness(p: number): void {
         pins.analogWritePin(AnalogPin.P16, p);
     }
