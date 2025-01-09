@@ -5,41 +5,36 @@
 
 //% weight=100 color=#b80672 icon=""
 namespace rgb {
-    // Enum for LED states (on/off)
-    enum LEDState {
-        //% block="off"
-        Off = 0,
-        //% block="on"
-        On = 1
-    }
-
     /**
      * Turn RED LED on/off
-     * @param state RED state (on or off), eg: LEDState.On
+     * @param state RED state (0 for off, 1 for on), eg: 1
      */
     //% block="set RED to %state"
+    //% state.min=0 state.max=1
     //% weight=100
-    export function rgb_red(state: LEDState): void {
+    export function rgb_red(state: number): void {
         pins.digitalWritePin(DigitalPin.P14, state);
     }
 
     /**
      * Turn GREEN LED on/off
-     * @param state GREEN state (on or off), eg: LEDState.On
+     * @param state GREEN state (0 for off, 1 for on), eg: 1
      */
     //% block="set GREEN to %state"
+    //% state.min=0 state.max=1
     //% weight=99
-    export function rgb_green(state: LEDState): void {
+    export function rgb_green(state: number): void {
         pins.digitalWritePin(DigitalPin.P15, state);
     }
 
     /**
      * Turn BLUE LED on/off
-     * @param state BLUE state (on or off), eg: LEDState.On
+     * @param state BLUE state (0 for off, 1 for on), eg: 1
      */
     //% block="set BLUE to %state"
+    //% state.min=0 state.max=1
     //% weight=98
-    export function rgb_blue(state: LEDState): void {
+    export function rgb_blue(state: number): void {
         pins.digitalWritePin(DigitalPin.P16, state);
     }
 
